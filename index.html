@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Seek and Find</title>
+  </head>
+  <body>
+    <div class="container" id="landing-page">
+      <div class="panel panel-default" id="app">
+        <div class="panel-body">
+          <div class="row" id="landing-upper-row">
+          </div>
+          <div class="row" id="landing-area">
+            <div class="col-sm-1" id="landing-left-filler">
+            </div>
+            <div class="col-sm-10">
+              <div class="panel panel-default" id="landing">
+                <div class="panel-body">
+                  <div class="jumbotron">
+                    <h1>Seek and Find</h1>
+                    <p>Choose a game</p>
+                    <span>
+                      <div class="btn btn-primary btn-lg" href="#" role="button" id="level-1-button">Level 1: Shapes</div>
+                    </span>
+                    <span>
+                      <div class="btn btn-primary btn-lg" href="#" role="button" id="level-2-button">Level 2: Colors</div>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-1" id="landing-right-filler">
+            </div>
+          </div>
+          <div class="row" id="landing-lower-row">
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+
+    <!-- GAME PAGE CODE -->
+    <div class="container hidden" id="shapes-game-view">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="row" id="game-upper-row">
+            <div class="col-sm-1" id="title-left-filler">
+            </div>
+            <div class="col-sm-2" id="title">
+              <h3>Seek and Find</h3>
+            </div>
+            <div class="col-sm-2" id="back-button">
+              <h3>back</h3>
+            </div>
+            <div class="col-sm-1" id="title-right-filler">
+            </div>
+          </div>
+          <div class="row" id="game-area">
+            <div class="col-sm-1" id="game-left-filler">
+            </div>
+            <div class="col-sm-10">
+              <div class="panel panel-default" id="game">
+                <div class="panel-body">
+                      <!-- insert game here -->
+                    <img src="images/game-layout.png" class="img-responsive">
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-1" id="game-right-filler">
+            </div>
+          </div>
+          <div class="row" id="lower-row">
+            <div class="col-sm-1" id="left-filler">
+            </div>
+            <div class="col-sm-4" id="instructions">
+              <!-- insert instructions here -->
+              <h3>instructions</h3>
+            </div>
+            <div class="col-sm-4" id="score">
+              <!-- insert score here -->
+              <h3>score</h3>
+            </div>
+            <div class="col-sm-1" id="right-filler">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
