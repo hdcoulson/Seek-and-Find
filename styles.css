@@ -6,3 +6,67 @@
 #lower-row {
   height: 60px;
 }
+
+.shape {
+  height: 100px;
+  margin: 10px;
+}
+
+#game-body {
+  position: relative;
+  height: 40vh;
+}
+
+#square-blue {
+  position: absolute;
+  top: 65%;
+  left: 30%;
+}
+
+#square-red {
+  position: absolute;
+  top: 10%;
+  left: 65%;
+}
+
+#square-yellow {
+  position: absolute;
+  top: 1%;
+  left: 35%;
+}
+
+#circle-red {
+  position: absolute;
+  top: 22%;
+  left: 50%;
+}
+
+#circle-blue {
+  position: absolute;
+  top: 60%;
+  left: 80%;
+}
+
+#circle-yellow {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+}
+
+#triangle-yellow {
+  position: absolute;
+  top: 60%;
+  left: 40%;
+}
+
+#triangle-red {
+  position: absolute;
+  top: 55%;
+  left: 60%;
+}
+
+#triangle-blue {
+  position: absolute;
+  top: 5%;
+  left: 85%;
+}
