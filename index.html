@@ -39,8 +39,6 @@
         </div>
       </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="main.js"></script>
 
     <!-- GAME PAGE CODE -->
     <div class="container hidden" id="shapes-game-view">
@@ -65,15 +63,6 @@
               <div class="panel panel-default" id="game">
                 <div class="panel-body" id="game-body">
                       <!-- insert game here -->
-                    <img src="images/square-blue.png" class="shape" id="square-blue">
-                    <img src="images/square-red.png" class="shape" id="square-red">
-                    <img src="images/square-yellow.png" class="shape" id="square-yellow">
-                    <img src="images/triangle-blue.png" class="shape" id="triangle-blue">
-                    <img src="images/triangle-red.png" class="shape" id="triangle-red">
-                    <img src="images/triangle-yellow.png" class="shape" id="riangle-yellow">
-                    <img src="images/circle-blue.png" class="shape" id="circle-blue">
-                    <img src="images/circle-yellow.png" class="shape" id="circle-yellow">
-                    <img src="images/circle-red.png" class="shape" id="circle-red">
                 </div>
               </div>
             </div>
@@ -83,13 +72,14 @@
           <div class="row" id="lower-row">
             <div class="col-sm-1" id="left-filler">
             </div>
-            <div class="col-sm-4" id="instructions">
-              <!-- insert instructions here -->
-              <h3>instructions</h3>
+            <div class="col-sm-3">
+              <!-- append target image name here later: customize to include color names-->
+              <h2 id="instructions">Find all the circles:</h2>
             </div>
-            <div class="col-sm-4" id="score">
-              <!-- insert score here -->
-              <h3>score</h3>
+            <div class="col-sm-2" id="target">
+            </div>
+            <div class="col-sm-3">
+                <h2 id="score">Score:</h2>
             </div>
             <div class="col-sm-1" id="right-filler">
             </div>
@@ -97,6 +87,8 @@
         </div>
       </div>
     </div>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+    <script src="listeners.js"></script>
   </body>
 </html>
