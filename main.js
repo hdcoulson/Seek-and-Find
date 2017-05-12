@@ -1,63 +1,83 @@
-const shapes = [
+const game = {
+shapes: [
   {
     name: 'circle',
     color: 'red',
     photo: 'images/circle-red.png',
-    id: 'circle-red'
+    id: 'circle-red',
+    found: false
   },
   {
     name: 'circle',
     color: 'yellow',
     photo: 'images/circle-yellow.png',
-    id: 'circle-yellow'
+    id: 'circle-yellow',
+    found: false
   },
   {
     name: 'circle',
     color: 'blue',
     photo: 'images/circle-blue.png',
-    id: 'circle-blue'
+    id: 'circle-blue',
+    found: false
   },
   {
     name: 'triangle',
     color: 'red',
     photo: 'images/triangle-red.png',
-    id: 'triangle-red'
+    id: 'triangle-red',
+    found: false
   },
   {
     name: 'triangle',
     color: 'yellow',
     photo: 'images/triangle-yellow.png',
-    id: 'triangle-yellow'
+    id: 'triangle-yellow',
+    found: false
   },
   {
     name: 'triangle',
     color: 'blue',
     photo: 'images/triangle-blue.png',
-    id: 'triangle-blue'
+    id: 'triangle-blue',
+    found: false
   },
   {
     name: 'square',
     color: 'yellow',
     photo: 'images/square-yellow.png',
-    id: 'square-yellow'
+    id: 'square-yellow',
+    found: false
   },
   {
     name: 'square',
     color: 'red',
     photo: 'images/square-red.png',
-    id: 'square-red'
+    id: 'square-red',
+    found: false
   },
   {
     name: 'square',
     color: 'blue',
     photo: 'images/square-blue.png',
-    id: 'square-blue'
+    id: 'square-blue',
+    found: false
   }
 ]
+}
 
-const circles = []
-const squares = []
-const triangles = []
+
+
+// Game state brainstorm
+// var game = {
+//   shapes: [
+//     { id: '1', type: 'triangle', found: false, color: 'blue' },
+//     { id: '2', type: 'circle', found: false, color: 'red' }
+//     { id: '3', type: 'rectangle', found: false, color: 'yellow'}
+//   ],
+//   level: 1,
+//   gameType: 'shapes'
+// }
 
 function renderShape(shape){
   const $shape = document.createElement('img')
@@ -70,7 +90,7 @@ function renderShape(shape){
   return $shape
 }
 
-shapes.forEach(function(shape) {
+game.shapes.forEach(function(shape) {
   const $gameBody = document.querySelector('#game-body')
   $gameBody.appendChild(renderShape(shape))
 })
@@ -86,6 +106,6 @@ function renderTargetShape(shape){
 
 const $instructions = document.querySelector('#instructions')
 const $target = document.querySelector('#target')
-const $randomShape = shapes[Math.floor(Math.random() * shapes.length)]
+const $randomShape = game.shapes[Math.floor(Math.random() * game.shapes.length)]
 $instructions.innerHTML = 'Find all the' + ' ' + $randomShape.name + 's:'
 $target.appendChild(renderTargetShape($randomShape))
