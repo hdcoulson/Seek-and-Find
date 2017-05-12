@@ -55,6 +55,10 @@ const shapes = [
   }
 ]
 
+const circles = []
+const squares = []
+const triangles = []
+
 function renderShape(shape){
   const $shape = document.createElement('img')
   $shape.classList.add('shape')
@@ -80,8 +84,8 @@ function renderTargetShape(shape){
   return $targetImage
 }
 
-const $randomShape = shapes[Math.floor(Math.random() * shapes.length)]
-const $target = document.querySelector('#target')
 const $instructions = document.querySelector('#instructions')
+const $target = document.querySelector('#target')
+const $randomShape = shapes[Math.floor(Math.random() * shapes.length)]
 $instructions.innerHTML = 'Find all the' + ' ' + $randomShape.name + 's:'
 $target.appendChild(renderTargetShape($randomShape))
