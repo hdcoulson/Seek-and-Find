@@ -66,19 +66,6 @@ shapes: [
 ]
 }
 
-
-
-// Game state brainstorm
-// var game = {
-//   shapes: [
-//     { id: '1', type: 'triangle', found: false, color: 'blue' },
-//     { id: '2', type: 'circle', found: false, color: 'red' }
-//     { id: '3', type: 'rectangle', found: false, color: 'yellow'}
-//   ],
-//   level: 1,
-//   gameType: 'shapes'
-// }
-
 function renderShape(shape){
   const $shape = document.createElement('img')
   $shape.classList.add('shape')
