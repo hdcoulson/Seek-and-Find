@@ -25,8 +25,12 @@ document.addEventListener('click', function(event) {
   else if (event.target.name === $targetImage) {
     if (event.target.id !== 'target-image') {
     event.target.classList.add('hidden')
-    }
     //add more animations and add to score
+    const shapesArray = game.shapes
+    const index = findArrayPosition(shapesArray, event.target.id)
+    shapesArray[index].found = true
+    console.log(index)
+    }
   }
 
 })

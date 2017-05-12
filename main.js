@@ -63,7 +63,8 @@ shapes: [
     id: 'square-blue',
     found: false
   }
-]
+],
+level: 1
 }
 
 function renderShape(shape){
@@ -96,3 +97,11 @@ const $target = document.querySelector('#target')
 const $randomShape = game.shapes[Math.floor(Math.random() * game.shapes.length)]
 $instructions.innerHTML = 'Find all the' + ' ' + $randomShape.name + 's:'
 $target.appendChild(renderTargetShape($randomShape))
+
+function findArrayPosition(shapes, id) {
+  for (i = 0; i < shapes.length; i++) {
+      if (shapes[i].id === id) {
+        return [ i ]
+      }
+  }
+}
