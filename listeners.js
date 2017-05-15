@@ -8,7 +8,7 @@ $(document).ready(function() {
 })
 
 $(document).ready(function() {
-  $("#back-button").click(function() {
+  $("#title-logo").click(function() {
     $("#shapes-game-view").addClass("hidden")
     $("#landing-page").removeClass("hidden")
   })
