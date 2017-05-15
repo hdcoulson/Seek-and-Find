@@ -62,6 +62,48 @@ shapes: [
     photo: 'images/square-blue.png',
     id: 'square-blue',
     found: false
+  },
+  {
+    name: 'star',
+    color: 'red',
+    photo: 'images/star-red.png',
+    id: 'star-red',
+    found: false
+  },
+  {
+    name: 'star',
+    color: 'yellow',
+    photo: 'images/star-yellow.png',
+    id: 'star-yellow',
+    found: false
+  },
+  {
+    name: 'star',
+    color: 'blue',
+    photo: 'images/star-blue.png',
+    id: 'star-blue',
+    found: false
+  },
+  {
+    name: 'hexagon',
+    color: 'blue',
+    photo: 'images/hexagon-blue.png',
+    id: 'hexagon-blue',
+    found: false
+  },
+  {
+    name: 'hexagon',
+    color: 'yellow',
+    photo: 'images/hexagon-yellow.png',
+    id: 'hexagon-yellow',
+    found: false
+  },
+  {
+    name: 'hexagon',
+    color: 'red',
+    photo: 'images/hexagon-red.png',
+    id: 'hexagon-red',
+    found: false
   }
 ],
 level: 1

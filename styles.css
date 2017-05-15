@@ -1,3 +1,7 @@
+#game-body {
+  position: relative;
+  height: 400px;
+}
 
 #upper-row {
   height: 60px;
@@ -12,15 +16,31 @@
   width: 10%;
 }
 
-#game-body {
+#title {
+  color: blue;
+  font-size: 100px;
   position: relative;
-  height: 40vh;
+  font-family: "K26ToyBlocks123";
+  float: left;
+  top: 50px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#level-1-button {
+  background-color: red;
+  font-size: 40px;
+}
+
+#level-2-button {
+  background-color: green;
+  font-size: 40px;
 }
 
 #square-blue {
   position: absolute;
-  top: 45%;
-  left: 20%;
+  top: 47%;
+  left: 25%;
 }
 
 #square-red {
@@ -38,7 +58,7 @@
 #circle-red {
   position: absolute;
   top: 22%;
-  left: 40%;
+  left: 35%;
 }
 
 #circle-blue {
@@ -73,4 +93,40 @@
 
 #target-image {
   width: 50%;
+}
+
+#star-red {
+  position: absolute;
+  top: 29%;
+  left: 73%;
+}
+
+#star-yellow {
+  position: absolute;
+  top: 70%;
+  left: 10%;
+}
+
+#star-blue {
+  position: absolute;
+  top: 1%;
+  left: 47%;
+}
+
+#hexagon-red {
+  position: absolute;
+  top: 27%;
+  left: 10%;
+}
+
+#hexagon-yellow {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+}
+
+#hexagon-blue {
+  position: absolute;
+  top: 1%;
+  left: 27%;
 }
