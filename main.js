@@ -134,11 +134,15 @@ function renderTargetShape(shape){
   return $targetImage
 }
 
+function generateTargetImage(){
 const $instructions = document.querySelector('#instructions')
+$instructions.innerHTML = ' '
 const $target = document.querySelector('#target')
+$target.innerHTML = ' '
 const $randomShape = game.shapes[Math.floor(Math.random() * game.shapes.length)]
 $instructions.innerHTML = 'Find all the' + ' ' + $randomShape.name + 's:'
 $target.appendChild(renderTargetShape($randomShape))
+}
 
 function findArrayPosition(shapes, id) {
   for (i = 0; i < shapes.length; i++) {
@@ -150,9 +154,37 @@ function findArrayPosition(shapes, id) {
 
 function resetHiddenShapes(matches) {
   const shapesArray = game.shapes
+    if (matches.length === 3) {
+      for (i =0; i < shapesArray.length; i++) {
+        matches[i].found = false
+      }
+    }
+  return shapesArray
+}
+
+function matchedShapes(shapesArray, matches) {
+  const matched = []
+shapesArray.forEach(function(shape) {
+  const name = matches
+  if (shape.name === name) {
+    if (shape.found == true) {
+    matched.push(shape)
+      }
+    }
+  })
+  return matched
+}
+
+function resetHiddenShapes(matches) {
+  const shapesArray = game.shapes
       if (matches.length === 3) {
         for (i =0; i < shapesArray.length; i++) {
-          matches[i].found = false
+          // console.log(matches)
+          // matches[i].found = false
+          // insert pop-up modal
+          // un-hide shapes
+          //refresh shapes
+          generateTargetImage()
         }
       }
   return shapesArray
