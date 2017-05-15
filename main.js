@@ -147,3 +147,13 @@ function findArrayPosition(shapes, id) {
       }
   }
 }
+
+function resetHiddenShapes(matches) {
+  const shapesArray = game.shapes
+      if (matches.length === 3) {
+        for (i =0; i < shapesArray.length; i++) {
+          matches[i].found = false
+        }
+      }
+  return shapesArray
+}
