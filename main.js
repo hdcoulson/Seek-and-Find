@@ -109,6 +109,12 @@ shapes: [
 level: 1
 }
 
+function foundStatus(shape){
+  if(shape.found == false){
+    return shape
+  }
+}
+
 function renderShape(shape){
   const $shape = document.createElement('img')
   $shape.classList.add('shape')
@@ -139,7 +145,9 @@ const $instructions = document.querySelector('#instructions')
 $instructions.innerHTML = ' '
 const $target = document.querySelector('#target')
 $target.innerHTML = ' '
-const $randomShape = game.shapes[Math.floor(Math.random() * game.shapes.length)]
+const $shapesArray = game.shapes
+const $filteredShapesArray = $shapesArray.filter(foundStatus)
+const $randomShape = $filteredShapesArray[Math.floor(Math.random() * $filteredShapesArray.length)]
 $instructions.innerHTML = 'Find all the' + ' ' + $randomShape.name + 's:'
 $target.appendChild(renderTargetShape($randomShape))
 }
