@@ -33,8 +33,7 @@ document.addEventListener('click', function(event) {
     const shapesArray = game.shapes
     const index = findArrayPosition(shapesArray, event.target.id)
     shapesArray[index].found = true
-
-    console.log(resetHiddenShapes(matchedShapes(shapesArray, matches)))
+    resetHiddenShapes(matchedShapes(shapesArray, matches))
 
     }
   }
