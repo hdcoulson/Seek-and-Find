@@ -1,70 +1,70 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <title>Seek and Find</title>
-  </head>
-  <body>
-    <div class="container" id="homepage">
-        <div class="panel-body">
-          <div class="row">
-            <div class="row">
-              <div class="col-sm-12">
-                <h1 class="title">Seek and Find</h1>
-                <div class="thumbnail">
-                  <img src="images/kid.jpg" class="img-responsive">
-                    <div class="btn-group btn-group-justified" role="group" aria-label="...">
-                      <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-primary btn-lg" id="play">Play</button>
-                      </div>
-                  </div>
+<head>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <title>Seek and Find</title>
+</head>
+<body>
+  <div class="container" id="homepage">
+    <div class="panel-body">
+      <div class="row">
+        <div class="row">
+          <div class="col-sm-12">
+            <h1 class="title">Seek and Find</h1>
+            <div class="thumbnail">
+              <img src="images/kid.jpg" class="img-responsive">
+              <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                <div class="btn-group" role="group">
+                  <button type="button" class="btn btn-primary btn-lg" id="play">Play</button>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-    </div>
-
-    <!-- GAME PAGE CODE -->
-    <div class="container hidden" id="game-view">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-sm-12" id="logo">
-              <h1 class="title">Seek and Find</h1>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-1">
-            </div>
-            <div class="col-sm-10">
-              <div class="panel panel-default">
-                <div class="panel-body" id="game">
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-1">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-1">
-            </div>
-            <div class="col-sm-3">
-              <h2 id="instructions"></h2>
-            </div>
-            <div class="col-sm-2" id="target-shape">
-            </div>
-            <div class="col-sm-1">
             </div>
           </div>
         </div>
       </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="main.js"></script>
-    <script src="listeners.js"></script>
-  </body>
+  </div>
+
+  <!-- GAME PAGE CODE -->
+  <div class="container hidden" id="game-view">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-sm-12">
+            <h1 class="title" id="logo">Seek and Find</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-1">
+          </div>
+          <div class="col-sm-10">
+            <div class="panel panel-default">
+              <div class="panel-body" id="game">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-1">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-1">
+          </div>
+          <div class="col-sm-3">
+            <h2 id="instructions"></h2>
+          </div>
+          <div class="col-sm-2" id="target-shape">
+          </div>
+          <div class="col-sm-1">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="main.js"></script>
+  <script src="listeners.js"></script>
+</body>
 </html>
