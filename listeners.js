@@ -1,16 +1,16 @@
 $(document).ready(function() {
-  $("#level-1-button").click(function() {
-    $("#landing-page").addClass("hidden")
-    $("#shapes-game-view").removeClass("hidden")
+  $("#play").click(function() {
+    $("#homepage").addClass("hidden")
+    $("#game-view").removeClass("hidden")
     //insert target image function here
-    generateTargetImage()
+    renderTargetImage()
   })
 })
 
 $(document).ready(function() {
-  $("#title-logo").click(function() {
-    $("#shapes-game-view").addClass("hidden")
-    $("#landing-page").removeClass("hidden")
+  $("#logo").click(function() {
+    $("#game-view").addClass("hidden")
+    $("#homepage").removeClass("hidden")
   })
 })
 
@@ -29,10 +29,10 @@ document.addEventListener('click', function(event) {
     event.target.classList.add('hidden')
     //add more animations and add to score
     const $matches = event.target.name
-    const $shapesArray = game.shapes
-    const $index = findArrayPosition($shapesArray, event.target.id)
-    $shapesArray[$index].found = true
-    refreshNewShape(matchedShapes($shapesArray, $matches))
+    const $shapes = game.shapes
+    const $index = position($shapes, event.target.id)
+    $shapes[$index].found = true
+    newShape(matchedShapes($shapes, $matches))
     }
   }
 })

@@ -1,4 +1,4 @@
-#game-body {
+#game {
   position: relative;
   height: 400px;
 }
@@ -27,13 +27,8 @@
   transform: translate(-50%, -50%);
 }
 
-#level-1-button {
+#play {
   background-color: red;
-  font-size: 40px;
-}
-
-#level-2-button {
-  background-color: green;
   font-size: 40px;
 }
 

@@ -127,7 +127,7 @@ function renderShape(shape){
 }
 
 game.shapes.forEach(function(shape) {
-  const $gameBody = document.querySelector('#game-body')
+  const $gameBody = document.querySelector('#game')
   $gameBody.appendChild(renderShape(shape))
 })
 
@@ -140,19 +140,19 @@ function renderTargetShape(shape){
   return $targetImage
 }
 
-function generateTargetImage(){
+function renderTargetImage(){
 const $instructions = document.querySelector('#instructions')
 $instructions.innerHTML = ' '
-const $target = document.querySelector('#target')
-$target.innerHTML = ' '
-const $shapesArray = game.shapes
-const $filteredShapesArray = $shapesArray.filter(foundStatus)
-const $randomShape = $filteredShapesArray[Math.floor(Math.random() * $filteredShapesArray.length)]
+const $targetShape = document.querySelector('#target-shape')
+$targetShape.innerHTML = ' '
+const $shapes = game.shapes
+const $filteredShapes = $shapes.filter(foundStatus)
+const $randomShape = $filteredShapes[Math.floor(Math.random() * $filteredShapes.length)]
 $instructions.innerHTML = 'Find all the' + ' ' + $randomShape.name + 's:'
-$target.appendChild(renderTargetShape($randomShape))
+$targetShape.appendChild(renderTargetShape($randomShape))
 }
 
-function findArrayPosition(shapes, id) {
+function position(shapes, id) {
   for (i = 0; i < shapes.length; i++) {
       if (shapes[i].id === id) {
         return [ i ]
@@ -161,9 +161,9 @@ function findArrayPosition(shapes, id) {
 }
 
 function resetHiddenShapes(matches) {
-  const shapesArray = game.shapes
+  const $shapes = game.shapes
     if (matches.length === 3) {
-      for (i = 0; i < shapesArray.length; i++) {
+      for (i = 0; i < $shapes.length; i++) {
         matches[i].found = false
       }
     }
@@ -183,11 +183,11 @@ shapesArray.forEach(function(shape) {
   return matched
 }
 
-function refreshNewShape(matches) {
-  const shapesArray = game.shapes
+function newShape(matches) {
+  const $shapes = game.shapes
       if (matches.length === 3) {
-        for (i =0; i < shapesArray.length; i++) {
-          generateTargetImage()
+        for (i =0; i < $shapes.length; i++) {
+          renderTargetImage()
         }
       }
   return shapesArray
