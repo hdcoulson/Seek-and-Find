@@ -163,7 +163,7 @@ function findArrayPosition(shapes, id) {
 function resetHiddenShapes(matches) {
   const shapesArray = game.shapes
     if (matches.length === 3) {
-      for (i =0; i < shapesArray.length; i++) {
+      for (i = 0; i < shapesArray.length; i++) {
         matches[i].found = false
       }
     }
@@ -183,17 +183,19 @@ shapesArray.forEach(function(shape) {
   return matched
 }
 
-function resetHiddenShapes(matches) {
+function refreshNewShape(matches) {
   const shapesArray = game.shapes
       if (matches.length === 3) {
         for (i =0; i < shapesArray.length; i++) {
-          // console.log(matches)
-          // matches[i].found = false
-          // insert pop-up modal
-          // un-hide shapes
-          //refresh shapes
           generateTargetImage()
         }
       }
   return shapesArray
 }
+
+
+// console.log(matches)
+// matches[i].found = false
+// insert pop-up modal
+// un-hide shapes
+//refresh shapes

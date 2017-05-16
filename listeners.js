@@ -28,13 +28,11 @@ document.addEventListener('click', function(event) {
     if (event.target.id !== 'target-image') {
     event.target.classList.add('hidden')
     //add more animations and add to score
-    console.log(event.target.name)
-    const matches = event.target.name
-    const shapesArray = game.shapes
-    const index = findArrayPosition(shapesArray, event.target.id)
-    shapesArray[index].found = true
-    resetHiddenShapes(matchedShapes(shapesArray, matches))
-
+    const $matches = event.target.name
+    const $shapesArray = game.shapes
+    const $index = findArrayPosition($shapesArray, event.target.id)
+    $shapesArray[$index].found = true
+    refreshNewShape(matchedShapes($shapesArray, $matches))
     }
   }
 })
