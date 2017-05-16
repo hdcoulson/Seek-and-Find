@@ -167,12 +167,12 @@ function resetHiddenShapes(matches) {
         matches[i].found = false
       }
     }
-  return shapesArray
+  return $shapes
 }
 
-function matchedShapes(shapesArray, matches) {
+function matchedShapes($shapes, matches) {
   const matched = []
-shapesArray.forEach(function(shape) {
+$shapes.forEach(function(shape) {
   const name = matches
   if (shape.name === name) {
     if (shape.found == true) {
@@ -190,7 +190,7 @@ function newShape(matches) {
           renderTargetImage()
         }
       }
-  return shapesArray
+  return $shapes
 }
 
 
