@@ -115,7 +115,7 @@ function foundStatus(shape) {
   }
 }
 
-function randomShape(shapes) {
+function sampleShape(shapes) {
   const $filteredShapes = shapes.filter(foundStatus)
   const $randomShape = $filteredShapes[Math.floor(Math.random() * $filteredShapes.length)]
   return $randomShape
@@ -139,22 +139,18 @@ game.shapes.forEach(function(shape) {
 
 function createSampleShape(shape) {
   const $sampleShape = document.createElement('img')
-  $sampleShape.setAttribute('id', 'target-image')
+  $sampleShape.setAttribute('id', 'sample-image')
   $sampleShape.setAttribute('name', shape.name)
   $sampleShape.setAttribute('src', shape.photo)
 
   return $sampleShape
 }
 
-function renderTargetImage() { //name is confusing (reversed) -- removeChild
-  const $instructions = document.querySelector('#instructions')
-  $instructions.innerHTML = ' '
-  const $targetShape = document.querySelector('#target-shape')
-  $targetShape.innerHTML = ' '
-  const $shapes = game.shapes
-  const $shape = randomShape($shapes)
-  $instructions.innerHTML = 'Find all the' + ' ' + $shape.name + 's:'
-  $targetShape.appendChild(createSampleShape($shape))
+function createInstructions(shape) {
+  const $instructions = document.createElement('h3')
+  $instructions.setAttribute('id', 'find-shape')
+  $instructions.textContent = 'Find all the' + ' ' + shape.name + 's:'
+  return $instructions
 }
 
 function indexPosition(shapes, id) {
@@ -176,18 +172,25 @@ function resetHiddenShapes(matches) {
 }
 
 function matchedShapes(shapes, name) {
-  const matched = []
+  const foundShapes = []
   shapes.forEach(function(shape) {
     if (shape.name === name && shape.found == true) {
-        matched.push(shape)
+      foundShapes.push(shape)
     }
   })
-  return matched
+  return foundShapes
 }
 
-function newShape(matches) {
-  if (matches.length === 3) {
-    renderTargetImage()
-  return matches
+function newShape(foundShapes) {
+  const $shapes = game.shapes
+  const $instructions = document.querySelector('#instructions')
+  const $findShape = document.querySelector('#find-shape')
+  const $sampleShape = document.querySelector('#sample-shape')
+  const $sampleImage = document.querySelector('#sample-image')
+  if (foundShapes.length === 3) {
+    $instructions.removeChild($findShape)
+    $sampleShape.removeChild($sampleImage)
+    const $shape = createSampleShape(sampleShape($shapes))
+    return $shape
   }
 }
