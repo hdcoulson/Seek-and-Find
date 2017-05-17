@@ -142,6 +142,7 @@ function createSampleShape(shape) {
   $sampleShape.setAttribute('id', 'sample-image')
   $sampleShape.setAttribute('name', shape.name)
   $sampleShape.setAttribute('src', shape.photo)
+  $sampleShape.setAttribute('color', 'random')
 
   return $sampleShape
 }
@@ -161,11 +162,11 @@ function indexPosition(shapes, id) {
   }
 }
 
-function resetHiddenShapes(matches) {
+function resetHiddenShapes(foundShapes) {
   const $shapes = game.shapes
-  if (matches.length === 3) {
+  if (foundShapes.length === 3) {
     for (i = 0; i < $shapes.length; i++) {
-      matches[i].found = false
+      foundShapes[i].found = false
     }
   }
   return $shapes
@@ -183,14 +184,22 @@ function matchedShapes(shapes, name) {
 
 function newShape(foundShapes) {
   const $shapes = game.shapes
+  const $shape = createSampleShape(sampleShape($shapes))
+  return $shape
+}
+
+function nextShape(foundShapes) {
   const $instructions = document.querySelector('#instructions')
   const $findShape = document.querySelector('#find-shape')
   const $sampleShape = document.querySelector('#sample-shape')
   const $sampleImage = document.querySelector('#sample-image')
+  const $matches = event.target.name
+  const $shapes = game.shapes
+  const $newSampleShape = newShape(matchedShapes($shapes, $matches))
   if (foundShapes.length === 3) {
     $instructions.removeChild($findShape)
     $sampleShape.removeChild($sampleImage)
-    const $shape = createSampleShape(sampleShape($shapes))
-    return $shape
+    $instructions.appendChild(createInstructions($newSampleShape))
+    $sampleShape.appendChild($newSampleShape)
   }
 }

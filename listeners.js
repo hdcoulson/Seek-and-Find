@@ -24,25 +24,13 @@ document.addEventListener('click', function(event) {
     $sampleShape.appendChild($shape)
     $instructions.appendChild(createInstructions($shape))
   }
-  else if (event.target.name !== $sampleImage.name) {
-    if (event.target.classList.value === 'shape') {
-      event.target.classList.add('shake-chunk')
-    }
-    else {
-      return
-    }
+  else if (event.target.name !== $sampleImage.name && event.target.classList.value === 'shape') {
+    event.target.classList.add('shake-chunk')
   }
-  else if (event.target.id !== 'sample-image') {
+  else if (event.target.id !== 'sample-image' && event.target.tagName === 'IMG') {
     event.target.classList.add('hidden')
     $shapes[$index].found = true
 
-    const $newSampleShape = newShape(matchedShapes($shapes, $matches))
-    $instructions.appendChild(createInstructions($newSampleShape))
-    $sampleShape.appendChild($newSampleShape)
+    nextShape(matchedShapes($shapes, $matches))
   }
-  // else if (event.target === $logo) {
-  //   $gameView.classList.add('hidden')
-  //   $homepage.classList.remove('hidden')
-  //   $homepage.classList.add('container')
-  // }
 })
