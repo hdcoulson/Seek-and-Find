@@ -109,19 +109,19 @@ const game = {
   level: 1
 }
 
-function foundStatus(shape) {
+function foundShape(shape) {
   if(shape.found == false) {
     return shape
   }
 }
 
 function sampleShape(shapes) {
-  const $filteredShapes = shapes.filter(foundStatus)
+  const $filteredShapes = shapes.filter(foundShape)
   const $randomShape = $filteredShapes[Math.floor(Math.random() * $filteredShapes.length)]
   return $randomShape
 }
 
-function createShape(shape){
+function createShape(shape) {
   const $shape = document.createElement('img')
   $shape.classList.add('shape')
   $shape.setAttribute('id', shape.id)
@@ -162,16 +162,6 @@ function indexPosition(shapes, id) {
   }
 }
 
-function resetHiddenShapes(foundShapes) {
-  const $shapes = game.shapes
-  if (foundShapes.length === 3) {
-    for (i = 0; i < $shapes.length; i++) {
-      foundShapes[i].found = false
-    }
-  }
-  return $shapes
-}
-
 function matchedShapes(shapes, name) {
   const foundShapes = []
   shapes.forEach(function(shape) {
@@ -188,6 +178,41 @@ function newShape(foundShapes) {
   return $shape
 }
 
+function removeHidden() {
+  const $gameBody = document.querySelector('#game')
+  const $circleRed = document.querySelector('#circle-red')
+  const $circleBlue = document.querySelector('#circle-blue')
+  const $circleYellow = document.querySelector('#circle-yellow')
+  const $triangleRed = document.querySelector('#triangle-red')
+  const $triangleBlue = document.querySelector('#triangle-blue')
+  const $triangleYellow = document.querySelector('#triangle-yellow')
+  const $squareRed = document.querySelector('#square-red')
+  const $squareBlue = document.querySelector('#square-blue')
+  const $squareYellow = document.querySelector('#square-yellow')
+  const $starRed = document.querySelector('#star-red')
+  const $starBlue = document.querySelector('#star-blue')
+  const $starYellow = document.querySelector('#star-yellow')
+  const $hexagonRed = document.querySelector('#hexagon-red')
+  const $hexagonBlue = document.querySelector('#hexagon-blue')
+  const $hexagonYellow = document.querySelector('#hexagon-yellow')
+
+  $gameBody.removeChild($circleRed)
+  $gameBody.removeChild($circleBlue)
+  $gameBody.removeChild($circleYellow)
+  $gameBody.removeChild($triangleRed)
+  $gameBody.removeChild($triangleBlue)
+  $gameBody.removeChild($triangleYellow)
+  $gameBody.removeChild($squareRed)
+  $gameBody.removeChild($squareBlue)
+  $gameBody.removeChild($squareYellow)
+  $gameBody.removeChild($starRed)
+  $gameBody.removeChild($starBlue)
+  $gameBody.removeChild($starYellow)
+  $gameBody.removeChild($hexagonRed)
+  $gameBody.removeChild($hexagonBlue)
+  $gameBody.removeChild($hexagonYellow)
+}
+
 function nextShape(foundShapes) {
   const $instructions = document.querySelector('#instructions')
   const $findShape = document.querySelector('#find-shape')
@@ -195,11 +220,45 @@ function nextShape(foundShapes) {
   const $sampleImage = document.querySelector('#sample-image')
   const $matches = event.target.name
   const $shapes = game.shapes
-  const $newSampleShape = newShape(matchedShapes($shapes, $matches))
-  if (foundShapes.length === 3) {
+  const $found = foundStatus(found($shapes))
+  if (foundShapes.length === 3 && $found === false) {
+    const $newSampleShape = newShape(matchedShapes($shapes, $matches))
     $instructions.removeChild($findShape)
     $sampleShape.removeChild($sampleImage)
     $instructions.appendChild(createInstructions($newSampleShape))
     $sampleShape.appendChild($newSampleShape)
+  }
+}
+function found(shapes) {
+  const foundShapes = []
+  shapes.forEach(function(shape) {
+    if (shape.found == true ) {
+      foundShapes.push(shape)
+    }
+  })
+  return foundShapes
+}
+
+function foundStatus(shapes) {
+  // console.log(shapes.length)
+  if (shapes.length >= 15) {
+    return true
+  }
+  else {
+    return false
+  }
+}
+
+function resetGame(shapes) {
+  const $foundStatus = foundStatus(found(shapes))
+  const $found = found(shapes)
+  const $shapes = game.shapes
+  if ($foundStatus === true && $found.length === 15) {
+    // step 1 - execute modal
+    removeHidden()
+    $shapes.forEach(function(shape) {
+      const $gameBody = document.querySelector('#game')
+      $gameBody.appendChild(createShape(shape))
+    })
   }
 }
