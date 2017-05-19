@@ -19,7 +19,6 @@ document.addEventListener('click', function(event) {
     $instructions.appendChild(createInstructions($shape))
   }
   else if (event.target === $replay) {
-    console.log('hello')
     $playAgain.classList.add('hidden')
     $gameView.classList.remove('hidden')
   }
