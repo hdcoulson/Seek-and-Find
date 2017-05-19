@@ -3,6 +3,8 @@ document.addEventListener('click', function(event) {
   const $homepage = document.querySelector('#homepage')
   const $gameView = document.querySelector('#game-view')
   const $play = document.querySelector('#play')
+  const $replay = document.querySelector('#replay')
+  const $playAgain = document.querySelector('#play-again')
   const $matches = event.target.name
   const $shapes = game.shapes
   const $index = indexPosition($shapes, event.target.id)
@@ -16,6 +18,11 @@ document.addEventListener('click', function(event) {
     $sampleShape.appendChild($shape)
     $instructions.appendChild(createInstructions($shape))
   }
+  else if (event.target === $replay) {
+    console.log('hello')
+    $playAgain.classList.add('hidden')
+    $gameView.classList.remove('hidden')
+  }
   else if (event.target.name !== $sampleImage.name && event.target.classList.value === 'shape') {
     event.target.classList.add('shake-chunk')
   }
@@ -24,7 +31,5 @@ document.addEventListener('click', function(event) {
     event.target.classList.add('hidden')
     nextShape(matchedShapes($shapes, $matches))
     resetGame($shapes)
-    // console.log(found($shapes).length)
-    // console.log(foundStatus(found($shapes)))
   }
 })

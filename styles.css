@@ -32,6 +32,11 @@
   font-size: 40px;
 }
 
+#replay {
+  background-color: red;
+  font-size: 40px;
+}
+
 #square-blue {
   position: absolute;
   top: 47%;

@@ -259,10 +259,14 @@ function foundStatus(length) {
 }
 
 function resetGame(shapes) {
+  const $gameView = document.querySelector('#game-view')
+  const $playAgain = document.querySelector('#play-again')
   const $foundStatus = foundStatus(foundAll(found(shapes)))
   const $shapes = game.shapes
   if ($foundStatus === true) {
     // step 1 - execute modal
+    $gameView.classList.add('hidden')
+    $playAgain.classList.remove('hidden')
     // step 2 - clear game & reset
     removeHidden()
     $shapes.forEach(function(shape) {
