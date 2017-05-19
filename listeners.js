@@ -24,7 +24,7 @@ document.addEventListener('click', function(event) {
     event.target.classList.add('hidden')
     nextShape(matchedShapes($shapes, $matches))
     resetGame($shapes)
-    console.log(found($shapes))
-    console.log(foundStatus(found($shapes)))
+    // console.log(found($shapes).length)
+    // console.log(foundStatus(found($shapes)))
   }
 })

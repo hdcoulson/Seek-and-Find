@@ -236,12 +236,21 @@ function found(shapes) {
       foundShapes.push(shape)
     }
   })
-  return foundShapes
+  var length = foundShapes.length
+  return length
 }
 
-function foundStatus(shapes) {
-  // console.log(shapes.length)
-  if (shapes.length >= 15) {
+function foundAll(length) {
+  if (length < 15) {
+    return length
+  }
+  else {
+    return 0
+  }
+}
+
+function foundStatus(length) {
+  if (length >= 14) {
     return true
   }
   else {
@@ -250,13 +259,14 @@ function foundStatus(shapes) {
 }
 
 function resetGame(shapes) {
-  const $foundStatus = foundStatus(found(shapes))
-  const $found = found(shapes)
+  const $foundStatus = foundStatus(foundAll(found(shapes)))
   const $shapes = game.shapes
-  if ($foundStatus === true && $found.length === 15) {
+  if ($foundStatus === true) {
     // step 1 - execute modal
+    // step 2 - clear game & reset
     removeHidden()
     $shapes.forEach(function(shape) {
+      shape.found = false
       const $gameBody = document.querySelector('#game')
       $gameBody.appendChild(createShape(shape))
     })
