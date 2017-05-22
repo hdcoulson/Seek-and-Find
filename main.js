@@ -1,121 +1,127 @@
 const game = {
-shapes: [
-  {
-    name: 'circle',
-    color: 'red',
-    photo: 'images/circle-red.png',
-    id: 'circle-red',
-    found: false
-  },
-  {
-    name: 'circle',
-    color: 'yellow',
-    photo: 'images/circle-yellow.png',
-    id: 'circle-yellow',
-    found: false
-  },
-  {
-    name: 'circle',
-    color: 'blue',
-    photo: 'images/circle-blue.png',
-    id: 'circle-blue',
-    found: false
-  },
-  {
-    name: 'triangle',
-    color: 'red',
-    photo: 'images/triangle-red.png',
-    id: 'triangle-red',
-    found: false
-  },
-  {
-    name: 'triangle',
-    color: 'yellow',
-    photo: 'images/triangle-yellow.png',
-    id: 'triangle-yellow',
-    found: false
-  },
-  {
-    name: 'triangle',
-    color: 'blue',
-    photo: 'images/triangle-blue.png',
-    id: 'triangle-blue',
-    found: false
-  },
-  {
-    name: 'square',
-    color: 'yellow',
-    photo: 'images/square-yellow.png',
-    id: 'square-yellow',
-    found: false
-  },
-  {
-    name: 'square',
-    color: 'red',
-    photo: 'images/square-red.png',
-    id: 'square-red',
-    found: false
-  },
-  {
-    name: 'square',
-    color: 'blue',
-    photo: 'images/square-blue.png',
-    id: 'square-blue',
-    found: false
-  },
-  {
-    name: 'star',
-    color: 'red',
-    photo: 'images/star-red.png',
-    id: 'star-red',
-    found: false
-  },
-  {
-    name: 'star',
-    color: 'yellow',
-    photo: 'images/star-yellow.png',
-    id: 'star-yellow',
-    found: false
-  },
-  {
-    name: 'star',
-    color: 'blue',
-    photo: 'images/star-blue.png',
-    id: 'star-blue',
-    found: false
-  },
-  {
-    name: 'hexagon',
-    color: 'blue',
-    photo: 'images/hexagon-blue.png',
-    id: 'hexagon-blue',
-    found: false
-  },
-  {
-    name: 'hexagon',
-    color: 'yellow',
-    photo: 'images/hexagon-yellow.png',
-    id: 'hexagon-yellow',
-    found: false
-  },
-  {
-    name: 'hexagon',
-    color: 'red',
-    photo: 'images/hexagon-red.png',
-    id: 'hexagon-red',
-    found: false
-  }
-],
-level: 1
+  shapes: [
+    {
+      name: 'circle',
+      color: 'red',
+      photo: 'images/circle-red.png',
+      id: 'circle-red',
+      found: false
+    },
+    {
+      name: 'circle',
+      color: 'yellow',
+      photo: 'images/circle-yellow.png',
+      id: 'circle-yellow',
+      found: false
+    },
+    {
+      name: 'circle',
+      color: 'blue',
+      photo: 'images/circle-blue.png',
+      id: 'circle-blue',
+      found: false
+    },
+    {
+      name: 'triangle',
+      color: 'red',
+      photo: 'images/triangle-red.png',
+      id: 'triangle-red',
+      found: false
+    },
+    {
+      name: 'triangle',
+      color: 'yellow',
+      photo: 'images/triangle-yellow.png',
+      id: 'triangle-yellow',
+      found: false
+    },
+    {
+      name: 'triangle',
+      color: 'blue',
+      photo: 'images/triangle-blue.png',
+      id: 'triangle-blue',
+      found: false
+    },
+    {
+      name: 'square',
+      color: 'yellow',
+      photo: 'images/square-yellow.png',
+      id: 'square-yellow',
+      found: false
+    },
+    {
+      name: 'square',
+      color: 'red',
+      photo: 'images/square-red.png',
+      id: 'square-red',
+      found: false
+    },
+    {
+      name: 'square',
+      color: 'blue',
+      photo: 'images/square-blue.png',
+      id: 'square-blue',
+      found: false
+    },
+    {
+      name: 'star',
+      color: 'red',
+      photo: 'images/star-red.png',
+      id: 'star-red',
+      found: false
+    },
+    {
+      name: 'star',
+      color: 'yellow',
+      photo: 'images/star-yellow.png',
+      id: 'star-yellow',
+      found: false
+    },
+    {
+      name: 'star',
+      color: 'blue',
+      photo: 'images/star-blue.png',
+      id: 'star-blue',
+      found: false
+    },
+    {
+      name: 'hexagon',
+      color: 'blue',
+      photo: 'images/hexagon-blue.png',
+      id: 'hexagon-blue',
+      found: false
+    },
+    {
+      name: 'hexagon',
+      color: 'yellow',
+      photo: 'images/hexagon-yellow.png',
+      id: 'hexagon-yellow',
+      found: false
+    },
+    {
+      name: 'hexagon',
+      color: 'red',
+      photo: 'images/hexagon-red.png',
+      id: 'hexagon-red',
+      found: false
+    }
+  ],
+  level: 1
 }
 
-function foundStatus(shape){
-  if(shape.found == false){
+function foundShape(shape) {
+  if(shape.found == false) {
     return shape
   }
 }
 
-function renderShape(shape){
+function sampleShape(shapes) {
+  const $filteredShapes = shapes.filter(foundShape)
+  const $randomShape = $filteredShapes[Math.floor(Math.random() * $filteredShapes.length)]
+  return $randomShape
+}
+
+function createShape(shape) {
   const $shape = document.createElement('img')
   $shape.classList.add('shape')
   $shape.setAttribute('id', shape.id)
@@ -127,75 +133,144 @@ function renderShape(shape){
 }
 
 game.shapes.forEach(function(shape) {
-  const $gameBody = document.querySelector('#game-body')
-  $gameBody.appendChild(renderShape(shape))
+  const $gameBody = document.querySelector('#game')
+  $gameBody.appendChild(createShape(shape))
 })
 
-function renderTargetShape(shape){
-  const $targetImage = document.createElement('img')
-  $targetImage.setAttribute('id','target-image')
-  $targetImage.setAttribute('name', shape.name)
-  $targetImage.setAttribute('src', shape.photo)
+function createSampleShape(shape) {
+  const $sampleShape = document.createElement('img')
+  $sampleShape.setAttribute('id', 'sample-image')
+  $sampleShape.setAttribute('name', shape.name)
+  $sampleShape.setAttribute('src', shape.photo)
+  $sampleShape.setAttribute('color', 'random')
 
-  return $targetImage
+  return $sampleShape
 }
 
-function generateTargetImage(){
-const $instructions = document.querySelector('#instructions')
-$instructions.innerHTML = ' '
-const $target = document.querySelector('#target')
-$target.innerHTML = ' '
-const $shapesArray = game.shapes
-const $filteredShapesArray = $shapesArray.filter(foundStatus)
-const $randomShape = $filteredShapesArray[Math.floor(Math.random() * $filteredShapesArray.length)]
-$instructions.innerHTML = 'Find all the' + ' ' + $randomShape.name + 's:'
-$target.appendChild(renderTargetShape($randomShape))
+function createInstructions(shape) {
+  const $instructions = document.createElement('h3')
+  $instructions.setAttribute('id', 'find-shape')
+  $instructions.textContent = 'Find all the' + ' ' + shape.name + 's:'
+  return $instructions
 }
 
-function findArrayPosition(shapes, id) {
+function indexPosition(shapes, id) {
   for (i = 0; i < shapes.length; i++) {
-      if (shapes[i].id === id) {
-        return [ i ]
-      }
+    if (shapes[i].id === id) {
+      return [ i ]
+    }
   }
 }
 
-function resetHiddenShapes(matches) {
-  const shapesArray = game.shapes
-    if (matches.length === 3) {
-      for (i = 0; i < shapesArray.length; i++) {
-        matches[i].found = false
-      }
-    }
-  return shapesArray
-}
-
-function matchedShapes(shapesArray, matches) {
-  const matched = []
-shapesArray.forEach(function(shape) {
-  const name = matches
-  if (shape.name === name) {
-    if (shape.found == true) {
-    matched.push(shape)
-      }
+function matchedShapes(shapes, name) {
+  const foundShapes = []
+  shapes.forEach(function(shape) {
+    if (shape.name === name && shape.found == true) {
+      foundShapes.push(shape)
     }
   })
-  return matched
+  return foundShapes
 }
 
-function refreshNewShape(matches) {
-  const shapesArray = game.shapes
-      if (matches.length === 3) {
-        for (i =0; i < shapesArray.length; i++) {
-          generateTargetImage()
-        }
-      }
-  return shapesArray
+function newShape(foundShapes) {
+  const $shapes = game.shapes
+  const $shape = createSampleShape(sampleShape($shapes))
+  return $shape
 }
 
+function removeHidden() {
+  const $gameBody = document.querySelector('#game')
+  const $circleRed = document.querySelector('#circle-red')
+  const $circleBlue = document.querySelector('#circle-blue')
+  const $circleYellow = document.querySelector('#circle-yellow')
+  const $triangleRed = document.querySelector('#triangle-red')
+  const $triangleBlue = document.querySelector('#triangle-blue')
+  const $triangleYellow = document.querySelector('#triangle-yellow')
+  const $squareRed = document.querySelector('#square-red')
+  const $squareBlue = document.querySelector('#square-blue')
+  const $squareYellow = document.querySelector('#square-yellow')
+  const $starRed = document.querySelector('#star-red')
+  const $starBlue = document.querySelector('#star-blue')
+  const $starYellow = document.querySelector('#star-yellow')
+  const $hexagonRed = document.querySelector('#hexagon-red')
+  const $hexagonBlue = document.querySelector('#hexagon-blue')
+  const $hexagonYellow = document.querySelector('#hexagon-yellow')
 
-// console.log(matches)
-// matches[i].found = false
-// insert pop-up modal
-// un-hide shapes
-//refresh shapes
+  $gameBody.removeChild($circleRed)
+  $gameBody.removeChild($circleBlue)
+  $gameBody.removeChild($circleYellow)
+  $gameBody.removeChild($triangleRed)
+  $gameBody.removeChild($triangleBlue)
+  $gameBody.removeChild($triangleYellow)
+  $gameBody.removeChild($squareRed)
+  $gameBody.removeChild($squareBlue)
+  $gameBody.removeChild($squareYellow)
+  $gameBody.removeChild($starRed)
+  $gameBody.removeChild($starBlue)
+  $gameBody.removeChild($starYellow)
+  $gameBody.removeChild($hexagonRed)
+  $gameBody.removeChild($hexagonBlue)
+  $gameBody.removeChild($hexagonYellow)
+}
+
+function nextShape(foundShapes) {
+  const $instructions = document.querySelector('#instructions')
+  const $findShape = document.querySelector('#find-shape')
+  const $sampleShape = document.querySelector('#sample-shape')
+  const $sampleImage = document.querySelector('#sample-image')
+  const $matches = event.target.name
+  const $shapes = game.shapes
+  const $found = foundStatus(found($shapes))
+  if (foundShapes.length === 3 && $found === false) {
+    const $newSampleShape = newShape(matchedShapes($shapes, $matches))
+    $instructions.removeChild($findShape)
+    $sampleShape.removeChild($sampleImage)
+    $instructions.appendChild(createInstructions($newSampleShape))
+    $sampleShape.appendChild($newSampleShape)
+  }
+}
+function found(shapes) {
+  const foundShapes = []
+  shapes.forEach(function(shape) {
+    if (shape.found == true ) {
+      foundShapes.push(shape)
+    }
+  })
+  var length = foundShapes.length
+  return length
+}
+
+function foundAll(length) {
+  if (length < 15) {
+    return length
+  }
+  else {
+    return 0
+  }
+}
+
+function foundStatus(length) {
+  if (length >= 14) {
+    return true
+  }
+  else {
+    return false
+  }
+}
+
+function resetGame(shapes) {
+  const $gameView = document.querySelector('#game-view')
+  const $playAgain = document.querySelector('#play-again')
+  const $foundStatus = foundStatus(foundAll(found(shapes)))
+  const $shapes = game.shapes
+  if ($foundStatus === true) {
+    $gameView.classList.add('hidden')
+    $playAgain.classList.remove('hidden')
+    removeHidden()
+    $shapes.forEach(function(shape) {
+      shape.found = false
+      const $gameBody = document.querySelector('#game')
+      $gameBody.appendChild(createShape(shape))
+    })
+  }
+}

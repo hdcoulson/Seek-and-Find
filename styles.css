@@ -1,4 +1,4 @@
-#game-body {
+#game {
   position: relative;
   height: 400px;
 }
@@ -27,13 +27,13 @@
   transform: translate(-50%, -50%);
 }
 
-#level-1-button {
+#play {
   background-color: red;
   font-size: 40px;
 }
 
-#level-2-button {
-  background-color: green;
+#replay {
+  background-color: red;
   font-size: 40px;
 }
 
@@ -91,7 +91,7 @@
   left: 85%;
 }
 
-#target-image {
+#sample-image {
   width: 50%;
 }
 
