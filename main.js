@@ -3,106 +3,106 @@ const game = {
     {
       name: 'circle',
       color: 'red',
-      photo: 'images/circle-red.png',
+      photo: 'images/circle-red-3d.png',
       id: 'circle-red',
       found: false
     },
     {
       name: 'circle',
       color: 'yellow',
-      photo: 'images/circle-yellow.png',
+      photo: 'images/circle-yellow-3d.png',
       id: 'circle-yellow',
       found: false
     },
     {
       name: 'circle',
       color: 'blue',
-      photo: 'images/circle-blue.png',
+      photo: 'images/circle-blue-3d.png',
       id: 'circle-blue',
       found: false
     },
     {
       name: 'triangle',
       color: 'red',
-      photo: 'images/triangle-red.png',
+      photo: 'images/triangle-red-3d.png',
       id: 'triangle-red',
       found: false
     },
     {
       name: 'triangle',
       color: 'yellow',
-      photo: 'images/triangle-yellow.png',
+      photo: 'images/triangle-yellow-3d.png',
       id: 'triangle-yellow',
       found: false
     },
     {
       name: 'triangle',
       color: 'blue',
-      photo: 'images/triangle-blue.png',
+      photo: 'images/triangle-blue-3d.png',
       id: 'triangle-blue',
       found: false
     },
     {
       name: 'square',
       color: 'yellow',
-      photo: 'images/square-yellow.png',
+      photo: 'images/square-yellow-3d.png',
       id: 'square-yellow',
       found: false
     },
     {
       name: 'square',
       color: 'red',
-      photo: 'images/square-red.png',
+      photo: 'images/square-red-3d.png',
       id: 'square-red',
       found: false
     },
     {
       name: 'square',
       color: 'blue',
-      photo: 'images/square-blue.png',
+      photo: 'images/square-blue-3d.png',
       id: 'square-blue',
       found: false
     },
     {
       name: 'star',
       color: 'red',
-      photo: 'images/star-red.png',
+      photo: 'images/star-red-3d.png',
       id: 'star-red',
       found: false
     },
     {
       name: 'star',
       color: 'yellow',
-      photo: 'images/star-yellow.png',
+      photo: 'images/star-yellow-3d.png',
       id: 'star-yellow',
       found: false
     },
     {
       name: 'star',
       color: 'blue',
-      photo: 'images/star-blue.png',
+      photo: 'images/star-blue-3d.png',
       id: 'star-blue',
       found: false
     },
     {
-      name: 'hexagon',
+      name: 'pentagon',
       color: 'blue',
-      photo: 'images/hexagon-blue.png',
-      id: 'hexagon-blue',
+      photo: 'images/pentagon-blue-3d.png',
+      id: 'pentagon-blue',
       found: false
     },
     {
-      name: 'hexagon',
+      name: 'pentagon',
       color: 'yellow',
-      photo: 'images/hexagon-yellow.png',
-      id: 'hexagon-yellow',
+      photo: 'images/pentagon-yellow-3d.png',
+      id: 'pentagon-yellow',
       found: false
     },
     {
-      name: 'hexagon',
+      name: 'pentagon',
       color: 'red',
-      photo: 'images/hexagon-red.png',
-      id: 'hexagon-red',
+      photo: 'images/pentagon-red-3d.png',
+      id: 'pentagon-red',
       found: false
     }
   ],
@@ -192,9 +192,9 @@ function removeHidden() {
   const $starRed = document.querySelector('#star-red')
   const $starBlue = document.querySelector('#star-blue')
   const $starYellow = document.querySelector('#star-yellow')
-  const $hexagonRed = document.querySelector('#hexagon-red')
-  const $hexagonBlue = document.querySelector('#hexagon-blue')
-  const $hexagonYellow = document.querySelector('#hexagon-yellow')
+  const $pentagonRed = document.querySelector('#pentagon-red')
+  const $pentagonBlue = document.querySelector('#pentagon-blue')
+  const $pentagonYellow = document.querySelector('#pentagon-yellow')
 
   $gameBody.removeChild($circleRed)
   $gameBody.removeChild($circleBlue)
@@ -208,9 +208,9 @@ function removeHidden() {
   $gameBody.removeChild($starRed)
   $gameBody.removeChild($starBlue)
   $gameBody.removeChild($starYellow)
-  $gameBody.removeChild($hexagonRed)
-  $gameBody.removeChild($hexagonBlue)
-  $gameBody.removeChild($hexagonYellow)
+  $gameBody.removeChild($pentagonRed)
+  $gameBody.removeChild($pentagonBlue)
+  $gameBody.removeChild($pentagonYellow)
 }
 
 function nextShape(foundShapes) {
