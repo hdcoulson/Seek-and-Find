@@ -98,7 +98,7 @@
 #star-red {
   position: absolute;
   top: 29%;
-  left: 73%;
+  left: 75%;
 }
 
 #star-yellow {
@@ -113,19 +113,19 @@
   left: 47%;
 }
 
-#hexagon-red {
+#pentagon-red {
   position: absolute;
   top: 27%;
   left: 10%;
 }
 
-#hexagon-yellow {
+#pentagon-yellow {
   position: absolute;
   top: 35%;
   left: 50%;
 }
 
-#hexagon-blue {
+#pentagon-blue {
   position: absolute;
   top: 1%;
   left: 27%;
