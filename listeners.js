@@ -23,6 +23,7 @@ document.addEventListener('click', function(event) {
     $gameView.classList.remove('hidden')
   }
   else if (event.target.name !== $sampleImage.name && event.target.classList.value === 'shape') {
+    event.target.classList.remove('shake-chunk')
     event.target.classList.add('shake-chunk')
   }
   else if (event.target.id !== 'sample-image' && event.target.tagName === 'IMG') {
